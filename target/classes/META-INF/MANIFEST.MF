@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: Excel API with Spring Boot
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: sbasann
+Built-By: doroot
 Implementation-Vendor-Id: com.springboot
-Build-Jdk: 1.8.0_77
+Build-Jdk: 1.8.0_211
 Implementation-URL: http://projects.spring.io/spring-boot/excel-api/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

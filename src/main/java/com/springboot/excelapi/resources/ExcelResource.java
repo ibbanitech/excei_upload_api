@@ -24,7 +24,7 @@ import java.util.List;
 
 @Description(value = "Resource layer for handling REST requests.")
 @RestController
-@RequestMapping("api")
+@RequestMapping("/")
 public class ExcelResource {
     private ExcelService excelService;
     @Autowired
@@ -37,8 +37,14 @@ public class ExcelResource {
     public ExcelResource(ExcelService excelService) {
         this.excelService = excelService;
     }
+    
+    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> ping() throws IOException
+    {
+        return new ResponseEntity<>("Connected",HttpStatus.OK);
+    }
 
-    @PostMapping(value = "/known-cells", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/excel", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<TicketDTO>> mapExcelRowsToObject(@RequestParam("file") MultipartFile multipartFile) throws IOException
     {
         List<TicketDTO> ticketDTOList = this.excelService.readFromExcelWithKnownObject(multipartFile);
